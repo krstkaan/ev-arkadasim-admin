@@ -7,7 +7,7 @@ import Listings from './AdListing';
 import Sidebar from './Sidebar';
 import AdminUserListing from './Admins';
 import Users from './Users';
-import AdDetails from './AdDetails'; // AdDetails import edildi
+import AdDetails from './AdDetails';
 
 function Home() {
     const { isAuthenticated, logout } = useContext(AuthContext);
@@ -41,16 +41,15 @@ function Home() {
 
     return (
         <div className="d-flex" style={{ height: '100vh' }}>
-            {/* Sidebar */}
-            <Sidebar
+             {/* Sidebar */}
+             <Sidebar
                 activeComponent={activeComponent}
                 setActiveComponent={setActiveComponent}
                 handleLogout={handleLogout}
             />
 
             {/* Main Content */}
-            <div className="flex-grow-1">
-                <Navbar />
+            <div className="flex-grow-1 main-content-container">
                 <div className="p-4">
                     {activeComponent === 'home' && <h1>Welcome to the Admin Panel</h1>}
                     {activeComponent === 'listings' && <Listings handleShowDetails={handleShowDetails} />}
