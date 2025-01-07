@@ -17,7 +17,7 @@ function Home() {
 
     useEffect(() => {
         if (!isAuthenticated) {
-            window.location.href = '/login';
+            window.location.href = 'admin/login';
         }
     }, [isAuthenticated]);
 
@@ -27,7 +27,7 @@ function Home() {
 
     const handleLogout = () => {
         logout();
-        window.location.href = '/login';
+        window.location.href = 'admin/login';
     };
 
     const handleShowDetails = (id) => {
